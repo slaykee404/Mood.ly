@@ -1,16 +1,30 @@
+
+# Python
 __pycache__/
 *.pyc
 
+# Virtual environments
 .venv/
 venv/
 env/
 
+# Jupyter
 .ipynb_checkpoints/
 
+# Model directories and training outputs
 models/
+saved_model/
+results/
+ml/results/
+
+# Model weights
 *.pt
 *.pth
 *.bin
 *.safetensors
 
+# Environment variables and secrets
 .env
+
+# Python and ML caches
+.cache/
