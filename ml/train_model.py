@@ -15,8 +15,8 @@ print("Loading dataset...")
 dataset = load_dataset("dair-ai/emotion")
 
 # Use a small subset for our first training run
-train_data = dataset["train"].shuffle(seed=42).select(range(1000))
-val_data = dataset["validation"].shuffle(seed=42).select(range(200))
+train_data = dataset["train"].shuffle(seed=42).select(range(4000))
+val_data = dataset["validation"]
 
 # 2. Load the tokenizer
 model_name = "distilbert/distilbert-base-uncased"
@@ -62,7 +62,7 @@ def compute_metrics(pred):
 # 6. Configure training
 training_args = TrainingArguments(
     output_dir="./results",
-    num_train_epochs=1,
+    num_train_epochs=2,
     per_device_train_batch_size=4,
     per_device_eval_batch_size=4,
     learning_rate=2e-5,
